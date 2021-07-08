@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CPS</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <header class="head">
+            <nav class="menu">
+                <button class="button-menu menu__button-menu"><img src="img/1st.png" alt=""></button>
+                <img src="img/divider.png" alt="" class="img-menu2 menu__img-menu">
+                <img src="img/Group.png" alt="" class="img-menu1 menu__img-menu">
+                <button class="menu__button-menu"><img src="img/2nd.png" alt=""></button>
+                <button class="menu__button-menu"><img src="img/3rdicon.png" alt=""></button>
+            </nav>
+        </header>
+
+        <main class="main-info">
+            <div class="page-title">
+                <img src="img/highlight.png" class="page-title__bar" alt="">
+                <h1 class="page-title__title">Услуги и сервисы</h1>
+            </div>
+
+        <div class="select-section">
+            <button class="button select-section__button-active" autofocus>Ремонтируемые устройства</button>
+            <button class="button select-section__button">Дополнительные услуги</button>
+            <button class="button select-section__button">Цены на услуги</button>
+            <button class="button select-section__button">Специальные цены</button>
+            <button class="button select-section__button">Отзывы</button>
+        </div>
+
+        <div class="wrapper-test">
+            <div class="wrapper-test__block">
+                <div class="about" id="menu">
+                    <p class="about__text" id="text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
+                </div>
+
+                <div class="read-next">
+                    <!-- <div class="read-next__hidden" id="hiddenText"><br>Мы являемся авторизованным сервисным центром по ремонту техники Dell. <br>Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</br></p></div> -->
+                    <img src="img/icon.png" alt="" class="read-next__logo" id="logo">
+                    <div class="read-next__button" id="btn" onclick="readMore()">Читать далее</div>
+                </div>
+            </div>
+
+            <div class="photo">
+                <img src="img/photo.png" alt="" class="photo__img">
+            </div>
+        </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    function readMore() {
+    var blockText = document.getElementById("menu");
+    var menuText = document.getElementById("text");
+    var btn = document.getElementById("btn");
+    var logo = document.getElementById("logo");
+    
+    if (blockText.childElementCount < 2){
+        // for (i=0; i<2; i++){
+        var cloneMenuBtn = menuText.cloneNode(true);
+        blockText.appendChild(cloneMenuBtn);
+        btn.innerHTML = "Скрыть";
+        logo.setAttribute("src","img/icon2.png");
+
+    } else {
+            document.getElementById("text").remove();
+            btn.innerHTML = "Читать далее";
+            logo.setAttribute("src","img/icon.png");
+        }
+    }
+</script>
+
+</body>
+</html>
+
+<!-- max-width: 768px -->
